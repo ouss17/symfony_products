@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Modifier {{ product.name }}</h1>
+
+    {{ form_start(formProduct) }}
+        {{ form_row(formProduct.name) }}
+        {{ form_row(formProduct.price) }}
+        {{ form_row(formProduct.idCategory) }}
+        {{ form_row(formProduct.description) }}
+        <button type="submit" class="btn btn-success">Modifier un produit</button>
+    {{ form_end(formProduct) }}
+
+{% endblock %}

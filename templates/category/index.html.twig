@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        {% for category in categories %}
+            <table>
+            <tr>
+                <td>Libellé</td>
+                <td>Description</td>
+                <td>Action</td>
+            </tr>
+            <tr>
+                <td>{{ category.libelle }}</td>
+                <td>{{ category.description | raw }}</td>
+                <td>
+                    <a href={{ path('category_update', {'id':category.id}) }} class="btn btn-alert">Modifier</a>
+                    <a href={{ path('category_delete', {'id':category.id}) }} class="btn btn-alert">Supprimer</a>
+                    <a href={{ path('category_show', {'id':category.id}) }} class="btn btn-alert">Voir</a>
+                </td>
+            </tr>
+            </table>
+        {% endfor %}
+    </div>
+{% endblock %}
